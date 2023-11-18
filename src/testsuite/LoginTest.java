@@ -10,9 +10,10 @@ import java.time.Duration;
 /**
  * Created by Jay Vaghani
  */
-public class LoginTest {
+public class LoginTest{
 
     static String baseUrl = "https://demo.nopcommerce.com/";
+
 
     public static void main(String[] args) {
         // 1. Setup Browser

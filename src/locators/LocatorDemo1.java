@@ -31,6 +31,7 @@ public class LocatorDemo1 {
 
         // Name Locators
         driver.findElement(By.name("q")).sendKeys("Mobile");
+        driver.findElements(By.id("small-searchterms"));
 
         // 3. Action on Element
 //        search.sendKeys("Mobile");
