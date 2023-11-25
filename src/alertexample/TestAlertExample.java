@@ -3,6 +3,8 @@ package alertexample;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import utilities.Utility;
 
 /**
@@ -18,20 +20,40 @@ public class TestAlertExample extends Utility {
 
     // Simple Alert
     @Test
-    public void simpleAlertExample() {
-
+    public void simpleAlertExample() throws InterruptedException {
+        clickOnElement(By.xpath("//button[@aria-label='Consent']")); // Click on consent button
+        clickOnElement(By.id("alertBox")); // Click on click me button
+        Alert alert = driver.switchTo().alert(); // Creating alert object reference and Switch to alert
+        System.out.println(alert.getText()); // Getting text from alert
+        Thread.sleep(2);
+        alert.accept(); // Accepting the alert (clicking on OK button)
     }
 
     // Confirmation Alert
     @Test
-    public void conformationAlertExample() {
-
+    public void conformationAlertExample() throws InterruptedException {
+        clickOnElement(By.xpath("//button[@aria-label='Consent']")); // Click on consent button
+        clickOnElement(By.id("confirmBox")); // Click on click me button
+        Alert alert = driver.switchTo().alert(); // Creating alert object reference and Switch to alert
+        System.out.println(alert.getText()); // Getting text from alert
+        Thread.sleep(2);
+        alert.dismiss(); // Dismiss the alert
+        Thread.sleep(2);
+        System.out.println(getTextFromElement(By.id("output")));
     }
 
     // Prompt Alert
     @Test
-    public void promptAlertExample() {
-
+    public void promptAlertExample() throws InterruptedException {
+        clickOnElement(By.xpath("//button[@aria-label='Consent']")); // Click on consent button
+        clickOnElement(By.id("promptBox")); // Click on click me button
+        Alert alert = driver.switchTo().alert(); // Creating alert object reference and Switch to alert
+        System.out.println(alert.getText()); // Getting text from alert
+        Thread.sleep(2);
+        alert.sendKeys("Prime"); // Sending text to alert
+        alert.accept(); // Accept the alert
+        Thread.sleep(2);
+        System.out.println(getTextFromElement(By.id("output")));
     }
 
     @After

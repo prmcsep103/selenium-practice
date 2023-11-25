@@ -26,3 +26,20 @@ starts-with()
 text()
 chained xpath
 ----------------
+Xpath axis
+	Self
+	Parent
+	Child
+	Ancestor
+	Descendant
+	Following
+	Following-sibling
+	Preceding
+	Preceding-sibling
+---------------------------
+1. above
+2. below
+3. near
+4. toRightOf
+5. toLeftOf
+
