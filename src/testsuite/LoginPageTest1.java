@@ -10,27 +10,30 @@ import utilities.Utility;
 /**
  * Created by Jay Vaghani
  */
-public class LoginPageTest extends Utility {
+public class LoginPageTest1 extends Utility {
+
     String baseUrl = "https://demo.nopcommerce.com/";
 
     @Before
     public void setUp(){
         openBrowser(baseUrl);
     }
+
     @Test
     public void verifyUserShouldNavigateToLoginPageSuccessfully(){
         // Find the login link and click on login link
+        /*WebElement loginLink = driver.findElement(By.linkText("Log in"));
+        loginLink.click();*/
         clickOnElement(By.linkText("Log in"));
         String expectedText = "Welcome, Please Sign In!";
         // Find the actual text element and get the text from element
+       /* WebElement actualTextElement = driver.findElement(By.xpath("//h1"));
+        String actualText = actualTextElement.getText();*/
         String actualText = getTextFromElement(By.xpath("//h1"));
         //Verify expected and actual text
         Assert.assertEquals("Not redirected to Login page",expectedText, actualText);
     }
-    @After
-    public void tearDown(){
-        closeBrowser();
-    }
+
 
     @Test
     public void verifyErrorMessageWithInvalidCredentials(){
@@ -60,5 +63,8 @@ public class LoginPageTest extends Utility {
         Assert.assertEquals("Error message not displayed",expectedErrorMessage, actualErrorMessage);
     }
 
-
+    @After
+    public void tearDown(){
+        closeBrowser();
+    }
 }

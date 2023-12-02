@@ -37,6 +37,5 @@ public class LoginTest{
         // Find Password Field Element and Type Password
         WebElement passwordField = driver.findElement(By.name("Password"));
         passwordField.sendKeys("Prime123");
-
     }
 }

@@ -22,7 +22,7 @@ public class DatePicker extends Utility {
 
     @Test
     public void selectDate() {
-        String year = "2030";
+        String year = "2025";
         String month = "May";
         String date = "25";
         clickOnElement(By.id("datepicker")); // open the calendar
@@ -43,13 +43,12 @@ public class DatePicker extends Utility {
         for (WebElement dt : allDates ) {
             if (dt.getText().equalsIgnoreCase(date)){
                 dt.click();
-                break;
             }
         }
     }
 
     @After
     public void tearDown() {
-//        closeBrowser();
+        closeBrowser();
     }
 }

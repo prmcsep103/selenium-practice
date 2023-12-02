@@ -11,7 +11,6 @@ import java.time.Duration;
  * Created by Jay Vaghani
  */
 public class BaseTest {
-
     static String browser = "Chrome";
 
     public static WebDriver driver;
@@ -28,9 +27,8 @@ public class BaseTest {
         }
         driver.get(baseUrl);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-
     public void closeBrowser(){
         driver.quit();
     }
